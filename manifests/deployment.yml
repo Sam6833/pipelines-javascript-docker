@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sampipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sampipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: sampipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: sampipelinesjavascriptdocker 
+          image: testacrlab.azurecr.io/sampipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
